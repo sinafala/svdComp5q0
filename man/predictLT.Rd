@@ -4,8 +4,15 @@
 \alias{predictLT}
 \title{Predict a Life Table from Child or Child/Adult Mortality.}
 \usage{
-predictLT(sex, cm, smooth = TRUE, outlogit = FALSE, out5 = TRUE,
-  am = NULL)
+predictLT(
+  sex,
+  cm,
+  smooth = TRUE,
+  outlogit = FALSE,
+  out5 = TRUE,
+  am = NULL,
+  modsv = 2022
+)
 }
 \arguments{
 \item{sex}{Character: 'female' or 'male'.}
@@ -19,6 +26,8 @@ predictLT(sex, cm, smooth = TRUE, outlogit = FALSE, out5 = TRUE,
 \item{out5}{Boolean: if returning natural scale values and out5=TRUE, then return in five-year age groups, 5qx. Default is TRUE.}
 
 \item{am}{Optional decimal: input value(s) for 45q15; either single value or vector of values.  If a vector, must have the same number of elements as cm.}
+
+\item{modsv}{Optional integer: specifies version of calibration models to use; defaults to 2022 but can be set to 2018.}
 }
 \value{
 Data frame: predicted 1qx values for ages 0:109. Age 110 assumed to be 1.0 and not returned. Columns labeled with input child mortality values.
@@ -28,6 +37,7 @@ Data frame: predicted 1qx values for ages 0:109. Age 110 assumed to be 1.0 and n
 }
 \examples{
 predictLT("female",0.05)
+predictLT("female",0.05,modsv=2018)
 predictLT("male",0.03,am=0.26)
 predictLT("male",0.03,TRUE,TRUE,TRUE,0.26)
 predictLT("male",c(0.03,0.01))

@@ -1,4 +1,4 @@
-#' SVD-Comp Models Data Set - 'mods'.
+#' SVD-Comp Models Data Set - 'mods2022'.
 #'
 #' An R object containing a hierarchy of lists that contain SVD-derived components,
 #'     estimated model coefficients, and other parameter
@@ -7,7 +7,9 @@
 #'     the 'svdComp5q0()' function.  The model objects
 #'     have been 'cleaned' to remove large collections
 #'     of data that are not necessary to perform predictions - this dramatically
-#'     reduces their size.
+#'     reduces their size. This is the 2022 version of the models that includes
+#'     additional Human Mortality Database life tables available after the
+#'     \emph{Demography} paper was published.
 #'
 #' @format An R list object with members:
 #' \describe{
@@ -41,10 +43,7 @@
 #'     }
 #' }
 #' @source See model development in \url{https://arxiv.org/abs/1612.01408}
-"mods"
+"mods2022"
 
 # load the model data: svd components and regression coefficients
-load("./data/mods.RData")
-
-
-
+load("./data/mods2022.RData")

@@ -3,7 +3,6 @@
 \docType{package}
 \name{svdComp5q0}
 \alias{svdComp5q0}
-\alias{svdComp5q0-package}
 \title{svdComp5q0: Child or Child/Adult Mortality-indexed Model Life Tables.}
 \description{
 The svdComp5q0 package predicts full age schedules of mortality in single year or 5-year age groups from either child mortality (5q0) alone or both child and adult mortality (45q15).

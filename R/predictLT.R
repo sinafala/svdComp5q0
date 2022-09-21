@@ -10,26 +10,32 @@
 #' @param outlogit Boolean: output either logit scale or natural scale 1qx values. Default is FALSE.
 #' @param out5 Boolean: if returning natural scale values and out5=TRUE, then return in five-year age groups, 5qx. Default is TRUE.
 #' @param am Optional decimal: input value(s) for 45q15; either single value or vector of values.  If a vector, must have the same number of elements as cm.
+#' @param modsv Optional integer: specifies version of calibration models to use; defaults to 2022 but can be set to 2018.
 #' @return Data frame: predicted 1qx values for ages 0:109. Age 110 assumed to be 1.0 and not returned. Columns labeled with input child mortality values.
 #' @examples
 #' predictLT("female",0.05)
+#' predictLT("female",0.05,modsv=2018)
 #' predictLT("male",0.03,am=0.26)
 #' predictLT("male",0.03,TRUE,TRUE,TRUE,0.26)
 #' predictLT("male",c(0.03,0.01))
 #' \dontrun{predictLT("male",c(0.03,0.01),am=0.3)}
 #' @importFrom stats predict
 #' @export
-predictLT <- function(sex,cm,smooth=TRUE,outlogit=FALSE,out5=TRUE,am=NULL) {
+predictLT <- function(sex,cm,smooth=TRUE,outlogit=FALSE,out5=TRUE,am=NULL,modsv=2022) {
 
-  # sex: "female" or "male"
+  # sex: female or male
   # cm is a vector of 5q0 values
   # smooth: boolean, use smooth components or not
   # logit: boolean, use to return logit(qx) values
   # out5: boolean, output in 5-year age groups 5qx (only used if returning natural scale values)
-  # am is a vector of 45q15 values
-  # if am not supplied, then aml predicted from cml
+  # am is a vector of 45q15 values - if am not supplied, then aml predicted from cml
+  # modsv: model version is either 2018 or 2022, defaults to 2022
 
-  # ensure essential paramaters have reasonable values
+  # set mods, 2022 unless otherwise specified
+  mods <- mods2022
+  if (modsv == 2018) {mods <- mods2018}
+
+  # ensure essential parameters have reasonable values
   if (missing(sex) | missing(cm))
     stop('<sex> (female or male) or <cm> (number between 0.003 and 0.3) does not have a value')
   if (!(tolower(sex) == "female" | tolower(sex) == "male") | !(all(cm >= 0.003) & all(cm <= 0.3)))
