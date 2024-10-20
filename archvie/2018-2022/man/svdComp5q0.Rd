@@ -2,7 +2,6 @@
 % Please edit documentation in R/svdComp5q0.R
 \docType{package}
 \name{svdComp5q0}
-\alias{svdComp5q0-package}
 \alias{svdComp5q0}
 \title{svdComp5q0: Child or Child/Adult Mortality-indexed Model Life Tables.}
 \description{

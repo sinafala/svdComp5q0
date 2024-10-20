@@ -11,7 +11,7 @@ predictLT(
   outlogit = FALSE,
   out5 = TRUE,
   am = NULL,
-  modsv = 2018
+  modsv = 2022
 )
 }
 \arguments{

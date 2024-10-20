@@ -21,7 +21,7 @@
 #' \dontrun{predictLT("male",c(0.03,0.01),am=0.3)}
 #' @importFrom stats predict
 #' @export
-predictLT <- function(sex,cm,smooth=TRUE,outlogit=FALSE,out5=TRUE,am=NULL,modsv=2018) {
+predictLT <- function(sex,cm,smooth=TRUE,outlogit=FALSE,out5=TRUE,am=NULL,modsv=2022) {
 
   # sex: female or male
   # cm is a vector of 5q0 values
@@ -31,10 +31,9 @@ predictLT <- function(sex,cm,smooth=TRUE,outlogit=FALSE,out5=TRUE,am=NULL,modsv=
   # am is a vector of 45q15 values - if am not supplied, then aml predicted from cml
   # modsv: model version is either 2018 or 2022, defaults to 2022
 
-  # set mods, 2018 unless otherwise specified
-  mods <- mods2018
-  if (modsv == 2022) {mods <- mods2022}
-  if (modsv == 2024) {mods <- mods2024}
+  # set mods, 2022 unless otherwise specified
+  mods <- mods2022
+  if (modsv == 2018) {mods <- mods2018}
 
   # ensure essential parameters have reasonable values
   if (missing(sex) | missing(cm))
