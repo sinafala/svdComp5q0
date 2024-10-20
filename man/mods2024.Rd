@@ -51,7 +51,7 @@ An R object containing a hierarchy of lists that contain SVD-derived components,
     the 'svdComp5q0()' function.  The model objects
     have been 'cleaned' to remove large collections
     of data that are not necessary to perform predictions - this dramatically
-    reduces their size. This is the 2022 version of the models that includes
+    reduces their size. This is the 2024 version of the models that includes
     additional Human Mortality Database life tables available after the
     \emph{Demography} paper was published.
 }

@@ -6,6 +6,5 @@
 #' @section svdComp5q0 functions:
 #' \strong{predictLT} takes child or child/adult mortality and generates full age schedules of mortality.
 #'
-#' @docType package
 #' @name svdComp5q0
-NULL
+"_PACKAGE"
