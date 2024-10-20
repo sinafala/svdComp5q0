@@ -27,7 +27,7 @@ predictLT(
 
 \item{am}{Optional decimal: input value(s) for 45q15; either single value or vector of values.  If a vector, must have the same number of elements as cm.}
 
-\item{modsv}{Optional integer: specifies version of calibration models to use; defaults to 2022 but can be set to 2018.}
+\item{modsv}{Optional integer: specifies version of calibration models to use; defaults to 2018 but can be set to 2022 or 2024.}
 }
 \value{
 Data frame: predicted 1qx values for ages 0:109. Age 110 assumed to be 1.0 and not returned. Columns labeled with input child mortality values.
@@ -41,6 +41,8 @@ predictLT("female",0.05,modsv=2018)
 predictLT("male",0.03,am=0.26)
 predictLT("male",0.03,TRUE,TRUE,TRUE,0.26)
 predictLT("male",c(0.03,0.01))
+predictLT("male",c(0.03,0.01),modsv=2022)
+predictLT("male",c(0.03,0.01),modsv=2024)
 \dontrun{predictLT("male",c(0.03,0.01),am=0.3)}
 }
 \references{

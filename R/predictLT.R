@@ -10,7 +10,7 @@
 #' @param outlogit Boolean: output either logit scale or natural scale 1qx values. Default is FALSE.
 #' @param out5 Boolean: if returning natural scale values and out5=TRUE, then return in five-year age groups, 5qx. Default is TRUE.
 #' @param am Optional decimal: input value(s) for 45q15; either single value or vector of values.  If a vector, must have the same number of elements as cm.
-#' @param modsv Optional integer: specifies version of calibration models to use; defaults to 2022 but can be set to 2018.
+#' @param modsv Optional integer: specifies version of calibration models to use; defaults to 2018 but can be set to 2022 or 2024.
 #' @return Data frame: predicted 1qx values for ages 0:109. Age 110 assumed to be 1.0 and not returned. Columns labeled with input child mortality values.
 #' @examples
 #' predictLT("female",0.05)
@@ -18,6 +18,8 @@
 #' predictLT("male",0.03,am=0.26)
 #' predictLT("male",0.03,TRUE,TRUE,TRUE,0.26)
 #' predictLT("male",c(0.03,0.01))
+#' predictLT("male",c(0.03,0.01),modsv=2022)
+#' predictLT("male",c(0.03,0.01),modsv=2024)
 #' \dontrun{predictLT("male",c(0.03,0.01),am=0.3)}
 #' @importFrom stats predict
 #' @export
