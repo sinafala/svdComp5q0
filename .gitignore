@@ -1,4 +1,10 @@
-.Rproj.user
-.Rhistory
-.RData
-.Ruserdata
+**/.Rproj.user
+**/.Rhistory
+**/.RData
+**/.Ruserdata
+**/archive
+**/.Rbuildignore
+**/.gitattributes
+**/.gitignore
+**/svdComp5q0.Rproj
+**/LAST-UPDATE.txt
