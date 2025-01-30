@@ -1,0 +1,287 @@
+
+R version 4.4.2 (2024-10-31) -- "Pile of Leaves"
+Copyright (C) 2024 The R Foundation for Statistical Computing
+Platform: aarch64-apple-darwin20
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> pkgname <- "svdComp5q0"
+> source(file.path(R.home("share"), "R", "examples-header.R"))
+> options(warn = 1)
+> base::assign(".ExTimings", "svdComp5q0-Ex.timings", pos = 'CheckExEnv')
+> base::cat("name\tuser\tsystem\telapsed\n", file=base::get(".ExTimings", pos = 'CheckExEnv'))
+> base::assign(".format_ptime",
++ function(x) {
++   if(!is.na(x[4L])) x[1L] <- x[1L] + x[4L]
++   if(!is.na(x[5L])) x[2L] <- x[2L] + x[5L]
++   options(OutDec = '.')
++   format(x[1L:3L], digits = 7L)
++ },
++ pos = 'CheckExEnv')
+> 
+> ### * </HEADER>
+> library('svdComp5q0')
+> 
+> base::assign(".oldSearch", base::search(), pos = 'CheckExEnv')
+> base::assign(".old_wd", base::getwd(), pos = 'CheckExEnv')
+> cleanEx()
+> nameEx("expit")
+> ### * expit
+> 
+> flush(stderr()); flush(stdout())
+> 
+> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+> ### Name: expit
+> ### Title: Calculate expit (inverse logit).
+> ### Aliases: expit
+> 
+> ### ** Examples
+> 
+> expit(-5)
+[1] 0.006692851
+> 
+> 
+> 
+> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+> base::cat("expit", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+> cleanEx()
+> nameEx("logit")
+> ### * logit
+> 
+> flush(stderr()); flush(stdout())
+> 
+> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+> ### Name: logit
+> ### Title: Calculate logit.
+> ### Aliases: logit
+> 
+> ### ** Examples
+> 
+> logit(0.5)
+[1] 0
+> 
+> 
+> 
+> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+> base::cat("logit", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+> cleanEx()
+> nameEx("predictLT")
+> ### * predictLT
+> 
+> flush(stderr()); flush(stdout())
+> 
+> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+> ### Name: predictLT
+> ### Title: Predict a Life Table from Child or Child/Adult Mortality.
+> ### Aliases: predictLT
+> 
+> ### ** Examples
+> 
+> predictLT("female",0.05)
+        cm-0.050.am-0.174
+0             0.038421333
+1-4           0.010442071
+5-9           0.004621319
+10-14         0.003533348
+15-19         0.005692496
+20-24         0.007042582
+25-29         0.008249538
+30-34         0.010375389
+35-39         0.013963094
+40-44         0.019092369
+45-49         0.026650039
+50-54         0.038502226
+55-59         0.055821838
+60-64         0.085845823
+65-69         0.132928154
+70-74         0.212585083
+75-79         0.329187951
+80-84         0.481507145
+85-89         0.646968623
+90-94         0.788761663
+95-99         0.892361883
+100-104       0.948477795
+105-109       0.974816870
+110+          1.000000000
+> predictLT("female",0.05,modsv=2018)
+        cm-0.050.am-0.174
+0             0.038421333
+1-4           0.010442071
+5-9           0.004621319
+10-14         0.003533348
+15-19         0.005692496
+20-24         0.007042582
+25-29         0.008249538
+30-34         0.010375389
+35-39         0.013963094
+40-44         0.019092369
+45-49         0.026650039
+50-54         0.038502226
+55-59         0.055821838
+60-64         0.085845823
+65-69         0.132928154
+70-74         0.212585083
+75-79         0.329187951
+80-84         0.481507145
+85-89         0.646968623
+90-94         0.788761663
+95-99         0.892361883
+100-104       0.948477795
+105-109       0.974816870
+110+          1.000000000
+> predictLT("male",0.03,am=0.26)
+        cm-0.030.am-0.260
+0             0.024803616
+1-4           0.005967439
+5-9           0.003046368
+10-14         0.002702448
+15-19         0.006974548
+20-24         0.010480297
+25-29         0.011354358
+30-34         0.013712406
+35-39         0.018485949
+40-44         0.027203930
+45-49         0.041043537
+50-54         0.061893241
+55-59         0.091805453
+60-64         0.136729693
+65-69         0.196976477
+70-74         0.283785289
+75-79         0.399910672
+80-84         0.542709140
+85-89         0.686093313
+90-94         0.806285892
+95-99         0.892809734
+100-104       0.943137102
+105-109       0.969303591
+110+          1.000000000
+> predictLT("male",0.03,TRUE,TRUE,TRUE,0.26)
+        cm-0.030.am-0.260
+0              -3.6716494
+1-4            -5.1154522
+5-9            -5.7907543
+10-14          -5.9108911
+15-19          -4.9584888
+20-24          -4.5477227
+25-29          -4.4667343
+30-34          -4.2756470
+35-39          -3.9720854
+40-44          -3.5768130
+45-49          -3.1512123
+50-54          -2.7184528
+55-59          -2.2917869
+60-64          -1.8427219
+65-69          -1.4052997
+70-74          -0.9257621
+75-79          -0.4058373
+80-84           0.1712539
+85-89           0.7819179
+90-94           1.4260550
+95-99           2.1197681
+100-104         2.8085686
+105-109         3.4524322
+> predictLT("male",c(0.03,0.01))
+        cm-0.030.am-0.218 cm-0.010.am-0.156
+0             0.024803616      0.0083834312
+1-4           0.005428232      0.0017853222
+5-9           0.002874980      0.0009562301
+10-14         0.002510406      0.0010151984
+15-19         0.005980591      0.0034504595
+20-24         0.008577372      0.0053492616
+25-29         0.009046780      0.0057545355
+30-34         0.010832484      0.0069734564
+35-39         0.014694889      0.0095548045
+40-44         0.021973361      0.0147468108
+45-49         0.033900717      0.0237006448
+50-54         0.052410772      0.0379250174
+55-59         0.079719742      0.0596040183
+60-64         0.121069713      0.0921308376
+65-69         0.178551218      0.1387424542
+70-74         0.263213361      0.2087483758
+75-79         0.378607514      0.3104932016
+80-84         0.523626032      0.4514633385
+85-89         0.676449202      0.6147175635
+90-94         0.805724920      0.7670920381
+95-99         0.896427278      0.8758993806
+100-104       0.947253140      0.9386060216
+105-109       0.972449803      0.9691410496
+110+          1.000000000      1.0000000000
+> ## Not run: predictLT("male",c(0.03,0.01),am=0.3)
+> 
+> 
+> 
+> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+> base::cat("predictLT", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+> cleanEx()
+> nameEx("q1to5")
+> ### * q1to5
+> 
+> flush(stderr()); flush(stdout())
+> 
+> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+> ### Name: q1to5
+> ### Title: Convert Life Table Probabilities of Dying from 1-year to
+> ###   Standard 5-year Age Groups.
+> ### Aliases: q1to5
+> 
+> ### ** Examples
+> 
+> q1 <- predictLT("female",0.08,out5=FALSE)
+> q1to5(q1)
+        cm-0.080.am-0.222
+0             0.058029479
+1-4           0.019321943
+5-9           0.008684343
+10-14         0.006862905
+15-19         0.010430474
+20-24         0.012924620
+25-29         0.014535532
+30-34         0.017015344
+35-39         0.020844871
+40-44         0.026114569
+45-49         0.033601499
+50-54         0.046416948
+55-59         0.065195081
+60-64         0.098565357
+65-69         0.149612392
+70-74         0.234484265
+75-79         0.354020988
+80-84         0.504697895
+85-89         0.664658855
+90-94         0.798855954
+95-99         0.896582327
+100-104       0.949471143
+105-109       0.974710909
+110+          1.000000000
+> 
+> 
+> 
+> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+> base::cat("q1to5", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+> ### * <FOOTER>
+> ###
+> cleanEx()
+> options(digits = 7L)
+> base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
+Time elapsed:  0.118 0.005 0.124 0 0 
+> grDevices::dev.off()
+null device 
+          1 
+> ###
+> ### Local variables: ***
+> ### mode: outline-minor ***
+> ### outline-regexp: "\\(> \\)?### [*]+" ***
+> ### End: ***
+> quit('no')

@@ -1,0 +1,16 @@
+Package: svdComp5q0
+Type: Package
+Title: Child/Child-Adult Mortality-Indexed Model Life Tables
+Version: 0.1.0
+Authors@R: 
+    person("Samuel", "Clark", , "work@samclark.net", role = c("aut", "cre", "cph"))
+Description: SVD-Comp mortality model indexed by either child or child and adult mortality. Given input value(s) of either 5q0 or (5q0, 45q15), the predictLT function predicts single-year, age-specific values for 1qx or five-year, age-specific values for 5qx. See <doi:10.48550/arXiv.1612.01408> and <doi:10.1007/s13524-019-00785-3>. 
+License: GPL (>= 3)
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.3.2
+NeedsCompilation: no
+Packaged: 2025-01-30 00:32:11 UTC; samueljclark
+Author: Samuel Clark [aut, cre, cph]
+Maintainer: Samuel Clark <work@samclark.net>
+Depends: R (>= 3.5.0)

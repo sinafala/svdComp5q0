@@ -1,0 +1,11 @@
+expit                   Calculate expit (inverse logit).
+logit                   Calculate logit.
+mods2018                SVD-Comp Models Data Set - 'mods2018'.
+mods2022                SVD-Comp Models Data Set - 'mods2022'.
+mods2024                SVD-Comp Models Data Set - 'mods2024'.
+predictLT               Predict a Life Table from Child or Child/Adult
+                        Mortality.
+q1to5                   Convert Life Table Probabilities of Dying from
+                        1-year to Standard 5-year Age Groups.
+svdComp5q0              svdComp5q0: Child or Child/Adult
+                        Mortality-Indexed Model Life Tables.
